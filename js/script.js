@@ -36,6 +36,11 @@ createApp({
                 ]
         }
     },
+    
+    created(){
+            this.startAutoplay();
+    },
+
     methods: {
         changeImages(index){
             this.activeGame = index
