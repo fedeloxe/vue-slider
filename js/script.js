@@ -6,6 +6,7 @@ createApp({
     data() {
         return {
             activeGame:0,
+            autoplay: null,
             
             slides : [
                     {
@@ -36,7 +37,7 @@ createApp({
                 ]
         }
     },
-    
+
     created(){
             this.startAutoplay();
     },
@@ -59,12 +60,13 @@ createApp({
         },
         startAutoplay()
         {
-            autoplay=setInterval(() =>{
+            this.autoplay=setInterval(() =>{
                 this.clicknext()
             }, 3000)
         },
-        stopAutoplay: function(){
-            clearInterval(autoplay)  
+        stopAutoplay(){
+            clearInterval(this.autoplay);  
+            this.autoplay= null
 
         }
     
