@@ -51,7 +51,17 @@ createApp({
             if(this.activeGame < 0){
                 this.activeGame = this.slides.length - 1
             }
+        },
+        startAutoplay()
+        {
+            autoplay=setInterval(() =>{
+                this.clicknext()
+            }, 3000)
+        },
+        stopAutoplay: function(){
+            clearInterval(autoplay)  
+
         }
-        
-    },
+    
+    }
 }).mount('#app')
