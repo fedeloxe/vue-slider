@@ -5,6 +5,7 @@ const{
 createApp({
     data() {
         return {
+            activeGame:0,
             
             slides : [
                     {
@@ -36,6 +37,21 @@ createApp({
         }
     },
     methods: {
+        changeImages(index){
+            this.activeGame = index
+        },
+        clicknext(){
+            this.activeGame ++
+            if(this.activeGame > this.slides.length - 1 ){
+                this.activeGame = 0
+            }
+        },
+        clickprev(){
+            this.activeGame -- 
+            if(this.activeGame < 0){
+                this.activeGame = this.slides.length - 1
+            }
+        }
         
     },
 }).mount('#app')
